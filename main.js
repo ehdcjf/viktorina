@@ -1,12 +1,19 @@
 const SDK = window.AFREECA.ext;
-const extensionSDK = SDK();
-function init() {
-        // do something
-        console.log(extensionSDK);
-}
-console.log(extensionSDK);
+const extensionSdk = SDK();
 
-extensionSDK.handleInitialization((userInfo, broadInfo, playerInfo) => {
-        init();
-});
-user_screen.html, bj_screen.html, mo_user_screen.html;
+const myStorage = window.localStorage;
+
+function setLocalStorage(key, value) {}
+
+myStorage.setItem("quizList", JSON.stringify());
+
+const quizList = [];
+
+console.log(extensionSdk);
+
+const handleChatInfoReceived = (action, message) => {
+        if (quizList.length > 0 && action === "MESSAGE") {
+        }
+};
+
+extensionSdk.chat.listen(handleChatInfoReceived);

@@ -8,9 +8,21 @@
 	<script defer src="main.js"></script>
 </head>
 <body>
-	<div>
+	<div style="border: 1px solid black ; width: 400px; height: 600px; display: flex; flex-direction: column;"  >
+
+		<div class="icon-bar" style="display: flex; flex-direction: row-reverse; border: 1px solid pink;">
+			<a class="active"href="#"> <img src="./assets/icons8-history-100.png" alt="history" width="40px" height="40px"  style="padding: 0.3em;"></a>
+		</div>
+		<div style="display: flex; flex-direction: column; height: 100%;">
+			<div style="border: 1px solid blue; flex-grow: 1;">Q  질문적는 곳 질문=> 공지</div>
+			<div style="border: 1px solid green; flex-grow: 1;">A  정답 적는곳 (복수정답 가능) => race 함수</div> 
+			<div style="border: 1px solid peru; flex-grow: 2;">O 옵션, 필터 (팬만, 최대 몇명, 시간 제한)  race() 파라미터 </div>
+			<div style="border: 1px solid red; flex-grow: 2;">S 시작 정지 버튼 start(race)  stop(race)</div>
+			<div style="border: 1px solid red; flex-grow: 3; overflow-y: scroll;">R? 시작하고 나서 결과보여주는 창 result</div>
+		</div>
 		
 	</div>
 	
 </body>
 </html>
+
