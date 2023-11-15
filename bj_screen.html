@@ -5,24 +5,60 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>AfreecaTV Extensions</title>
 	<script defer src="https://static.afreecatv.com/asset/app/extension-helper/afreecatv-extension-sdk.js"></script>
-	<script defer src="main.js"></script>
+	<link rel="stylesheet" href="main.css">
 </head>
 <body>
-	<div style="border: 1px solid black ; width: 400px; height: 600px; display: flex; flex-direction: column;"  >
+	<div style="width: 100%; height: auto; display: flex; flex-direction: column;"  >
 
-		<div class="icon-bar" style="display: flex; flex-direction: row-reverse; border: 1px solid pink;">
+		<!-- <div class="icon-bar" style="display: flex; flex-direction: row-reverse; border: 1px solid pink;">
 			<a class="active"href="#"> <img src="./assets/icons8-history-100.png" alt="history" width="40px" height="40px"  style="padding: 0.3em;"></a>
-		</div>
-		<div style="display: flex; flex-direction: column; height: 100%;">
-			<div style="border: 1px solid blue; flex-grow: 1;">Q  질문적는 곳 질문=> 공지</div>
+		</div> -->
+		
+		<div id="question_box" class="box">
+			<h3 class="box_head">질문</h3>
+			<textarea name=""  cols="35" rows="5" id="question"></textarea>
+			
+
+			<!-- <div style="border: 1px solid blue; flex-grow: 1;">Q </div>
 			<div style="border: 1px solid green; flex-grow: 1;">A  정답 적는곳 (복수정답 가능) => race 함수</div> 
 			<div style="border: 1px solid peru; flex-grow: 2;">O 옵션, 필터 (팬만, 최대 몇명, 시간 제한)  race() 파라미터 </div>
 			<div style="border: 1px solid red; flex-grow: 2;">S 시작 정지 버튼 start(race)  stop(race)</div>
-			<div style="border: 1px solid red; flex-grow: 3; overflow-y: scroll;">R? 시작하고 나서 결과보여주는 창 result</div>
+			<div style="border: 1px solid red; flex-grow: 3; overflow-y: scroll;">R? 시작하고 나서 결과보여주는 창 result</div> -->
 		</div>
+		<div id="answer_box" class="box">
+			<h3 class="box_head">정답</h3>
+			<ul id="answer_list"></ul>
+			<div>
+				<label>정답 추가</label>
+				<input id="answer_input" type="text">
+				<button id="add_answer_btn">+</button>
+			</div>
+
+		</div>
+
+		<div id="option_box" class="box">
+			<h3 class="box_head">옵션</h3>
+			참여방식: 확장프로그램, 채팅, 확장+채팅 <br>  라디오
+			참여가능: 모두, 팬만, 열혈팬만, 매니저만<br>
+			선착순 :  x 명(최대 100명)<br>
+			시간제한: <br>
+
+
+		</div>
+
+		<div>
+			<button id="start_btn">시작</button>
+		</div>
+
+		<!-- <div style="border: 1px solid blue; flex-grow: 1;">Q </div>
+			<div style="border: 1px solid green; flex-grow: 1;">A  정답 적는곳 (복수정답 가능) => race 함수</div> 
+			<div style="border: 1px solid peru; flex-grow: 2;">O 옵션, 필터 (팬만, 최대 몇명, 시간 제한)  race() 파라미터 </div>
+			<div style="border: 1px solid red; flex-grow: 2;">S 시작 정지 버튼 start(race)  stop(race)</div>
+			<div style="border: 1px solid red; flex-grow: 3; overflow-y: scroll;">R? 시작하고 나서 결과보여주는 창 result</div> -->
+		
 		
 	</div>
-	
+	<script defer src="main.js" type="module"></script>
 </body>
 </html>
 
