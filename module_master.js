@@ -11,7 +11,7 @@ export class Master {
                 this.option = new Option();
                 this.result = new Result();
                 this.button = document.querySelector("#start_btn");
-                this.button.addEventListener("click", () => this.start());
+                this.button.addEventListener("click", this.start.bind(this));
         }
 
         stop() {
@@ -57,9 +57,9 @@ export class Master {
         }
 
         handleChatInfoReceived(action, message) {
-                if (action === "MESSAGE") {
-                        if(message.message==='')
-                }
+                // if (action === "MESSAGE") {
+                //         if(message.message=== this.answer)
+                // }
         }
 }
 

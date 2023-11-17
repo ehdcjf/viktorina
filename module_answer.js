@@ -4,8 +4,7 @@ export class Answer {
                 this.ul = document.querySelector("#answer_list");
                 this.input = document.querySelector("#answer_input");
                 this.button = document.querySelector("#add_answer_btn");
-
-                this.button.addEventListener("click", () => this.addItem());
+                this.button.addEventListener("click", this.addItem.bind(this));
         }
 
         addItem() {
