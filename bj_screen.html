@@ -38,16 +38,39 @@
 
 		<div id="option_box" class="box">
 			<h3 class="box_head">옵션</h3>
-			참여방식: 확장프로그램, 채팅, 확장+채팅 <br>  라디오
-			참여가능: 모두, 팬만, 열혈팬만, 매니저만<br>
-			선착순 :  x 명(최대 100명)<br>
-			시간제한: <br>
+			
+				<div >
+					참가자: 
+					<input type='radio' name='member' value='all' checked/>
+					<label >모두</label>
+					<input type='radio' name='member' value='fan' />
+					<label >팬만</label>
+					<input type='radio' name='member' value='topFan' />
+					<label >열혈팬만</label>
+					<input type='radio' name='member' value='manager' />
+					<label >매니저만</label>
 
+				</div>
+				<div id="timer">
+					타이머: <select id="selector">
+						<option value="none">없음</option>
+						<option value="10" selected>10초</option>
+						<option value="30" >30초</option>
+						<option value="60">1분</option>
+						<option value="180">3분</option>
+						<option value="300">5분</option>
+					    </select>
+					
 
+				</div>
 		</div>
 
-		<div>
+		<div id="action_box" class="box">
 			<button id="start_btn">시작</button>
+		</div>
+		<div id="result_box" class="box">
+			<h3 class="box_head">결과</h3>
+			<ul id="result_list"></ul>
 		</div>
 
 		<!-- <div style="border: 1px solid blue; flex-grow: 1;">Q </div>
