@@ -1,10 +1,28 @@
+@font-face {
+	font-family: 'EASTARJET-Medium';
+	src: url('./assets/EASTARJET-Medium.ttf') format('truetype');
+	font-weight: 500;
+    	font-style: normal;
+}
+
 * {
 	margin: 0;
 	padding: 0;
+	font-family: 'EASTARJET-Medium';
+}
+
+.member_text{
+	font-family: 'EASTARJET-Medium';
 }
 
 ul,li{
 	list-style: none;
+}
+
+
+body{
+	width: 100%;
+	height: auto;
 }
 
 .box{
@@ -14,13 +32,167 @@ ul,li{
 }
 
 
+
 .box_head{
 	margin-bottom: 2%;
 }
 
 #question{
-	font-size: 2rem;
+	font-size: 1.3rem;
 	width: 100%;
 	height: auto;
 
+}
+
+#answer_input_box{
+	display: flex;
+	flex-direction: row;
+
+}
+
+#answer_input{
+	width: 60%;
+	margin-right: 1rem;
+	padding: 0.5rem;
+	font-size: 1.3rem;
+}
+
+.answer_btn{
+	border: none;
+	background: none;
+	display: flex;
+	align-items: center;
+	
+}
+
+.answer_btn >img{
+	width: 32px;
+	height: 32px;
+}
+
+.answer_item{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-family: 'EASTARJET-Medium';
+	margin:1rem 1rem 1rem 0rem;
+}
+
+.answer_item> strong{
+	font-size: 1.3rem;
+	margin-right: 1rem;
+	
+}
+
+#member_box{
+	margin-bottom: 1rem;
+}
+
+.noti{
+	position: absolute;
+	display: none;
+}
+
+.show{
+	display: block;
+}
+
+.noti_bar {
+	position: fixed;
+	display: none;
+	bottom: 5vh;
+	left: 0;
+	width: 100%;
+	background-color: pink;
+	
+	padding: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 9999;
+    }
+    
+.noti_bar p {
+	margin: 0;
+}
+
+.show {
+	display: inline;
+}
+
+.result_box{
+	overflow-y: scroll;
+}
+
+
+.checkbox input {
+	display: none;
+}
+
+.checkbox span{
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+#option_box > div> label{
+	font-size: 1rem;
+}
+
+.checkbox .icon {
+	position: relative;
+	width: 17px;
+	height: 17px;
+	border: 1px solid #c8ccd4;
+	border-radius: 3px;
+	transition: background 0.1s ease;
+}
+
+.checkbox .icon::after {
+	position: absolute;
+	top: 1px;
+	left: 5px;
+	width: 5px;
+	height: 11px;
+	border-right: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	transform: rotate(45deg) scale(0);
+	transition: all 0.3s ease;
+	transition-delay: 0.15s;
+	opacity: 0;
+}
+
+.checkbox .member_text{
+	margin-right: 0.3rem;
+	font-size: 1rem;
+
+}
+
+.checkbox input:checked ~ .icon {
+	border-color:  transparent;
+	background: #33C1F5;
+	animation: jelly 0.6s ease;
+}
+
+#timer_box > .checkbox input:checked ~ .icon{
+	background: #79E868;
+}
+
+.checkbox input:checked ~ .icon::after{
+	opacity: 1;
+	transform: rotate(45deg) scale(1);
+}
+
+@keyframes jelly {
+	from{transform: scale(1,1);}
+	30%{transform: scale(1.25,0.75);}
+	40%{transform: scale(0.75,1.25);}
+	50%{transform: scale(1.15,0.85);}
+	65%{transform: scale(0.95,1.05);}
+	75%{transform: scale(1.05,0.95);}
+	to{transform: scale(1,1);}
+}
+
+.option_box>div{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }

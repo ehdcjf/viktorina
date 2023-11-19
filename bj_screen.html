@@ -7,31 +7,25 @@
 	<script defer src="https://static.afreecatv.com/asset/app/extension-helper/afreecatv-extension-sdk.js"></script>
 	<link rel="stylesheet" href="main.css">
 </head>
-<body>
+<body>	
 	<div style="width: 100%; height: auto; display: flex; flex-direction: column;"  >
-
+		
+		
 		<!-- <div class="icon-bar" style="display: flex; flex-direction: row-reverse; border: 1px solid pink;">
 			<a class="active"href="#"> <img src="./assets/icons8-history-100.png" alt="history" width="40px" height="40px"  style="padding: 0.3em;"></a>
 		</div> -->
 		
 		<div id="question_box" class="box">
 			<h3 class="box_head">질문</h3>
-			<textarea name=""  cols="35" rows="5" id="question"></textarea>
-			
-
-			<!-- <div style="border: 1px solid blue; flex-grow: 1;">Q </div>
-			<div style="border: 1px solid green; flex-grow: 1;">A  정답 적는곳 (복수정답 가능) => race 함수</div> 
-			<div style="border: 1px solid peru; flex-grow: 2;">O 옵션, 필터 (팬만, 최대 몇명, 시간 제한)  race() 파라미터 </div>
-			<div style="border: 1px solid red; flex-grow: 2;">S 시작 정지 버튼 start(race)  stop(race)</div>
-			<div style="border: 1px solid red; flex-grow: 3; overflow-y: scroll;">R? 시작하고 나서 결과보여주는 창 result</div> -->
+			<textarea name=""  cols="35" rows="3" id="question" spellcheck="false"></textarea>
 		</div>
 		<div id="answer_box" class="box">
 			<h3 class="box_head">정답</h3>
 			<ul id="answer_list"></ul>
-			<div>
-				<label>정답 추가</label>
+			<div id="answer_input_box">
+				<!-- <label>정답 추가</label> -->
 				<input id="answer_input" type="text">
-				<button id="add_answer_btn">+</button>
+				<button id="add_answer_btn" class="answer_btn"><img src="/assets/add.png" alt=""></button>
 			</div>
 
 		</div>
@@ -39,33 +33,71 @@
 		<div id="option_box" class="box">
 			<h3 class="box_head">옵션</h3>
 			
-				<div >
-					참가자: 
-					<input type='checkbox' name='member' value='normal' checked/>
-					<label >건빵</label>
-					<input type='checkbox' name='member' value='fan' checked/>
-					<label >팬</label>
-					<input type='checkbox' name='member' value='topFan' checked/>
-					<label >열혈팬</label>
-					<input type='checkbox' name='member' value='follower' checked/>
-					<label >구독자</label>
-					<input type='checkbox' name='member' value='supporter' checked/>
-					<label >서포터</label>
-					<input type='checkbox' name='member' value='manager' checked/>
-					<label >매니저</label>
-
+				<div id="member_box">
+					<label>참가자: </label>
+					<label class='checkbox'>
+						<input type='checkbox' name='member' value='isNormal' checked/>
+						<span class="icon"></span>
+						<span class="member_text">건빵.</span>
+					</label>
+					<label class='checkbox'>
+						<input type='checkbox' name='member' value='isFan' checked/>
+						<span class="icon"></span>
+						<span class="member_text">팬.</span>
+					</label>
+					<label class='checkbox'>
+						<input type='checkbox' name='member' value='isTopFan' checked/>
+						<span class="icon"></span>
+						<span class="member_text">열혈팬.</span>
+					</label>
+					<label class='checkbox'>
+						<input type='checkbox' name='member' value='isFollower' checked/>
+						<span class="icon"></span>
+						<span class="member_text">구독자.</span>
+					</label>
+					<label class='checkbox'>
+						<input type='checkbox' name='member' value='isSupporter' checked/>
+						<span class="icon"></span>
+						<span class="member_text">서포터.</span>
+					</label>
+					<label class='checkbox'>
+						<input type='checkbox' name='member' value='isManager' checked/>
+						<span class="icon"></span>
+						<span class="member_text">매니저.</span>
+					</label>
 				</div>
-				<div id="timer">
-					타이머: <select id="selector">
-						<option value="none">없음</option>
-						<option value="10" selected>10초</option>
-						<option value="30" >30초</option>
-						<option value="60">1분</option>
-						<option value="180">3분</option>
-						<option value="300">5분</option>
-					    </select>
-					
-
+				<div id="timer_box">
+					<label>타이머:</label>
+					<label class='checkbox'>
+						<input type='checkbox' name='timer' value='none' />
+						<span class="icon"></span>
+						<span class="member_text">없음.</span>
+					</label>
+					<label class='checkbox'>
+						<input type='checkbox' name='timer' value='10' checked/>
+						<span class="icon"></span>
+						<span class="member_text">10초.</span>
+					</label>
+					<label class='checkbox'>
+						<input type='checkbox' name='timer' value='30' />
+						<span class="icon"></span>
+						<span class="member_text">30초.</span>
+					</label>
+					<label class='checkbox'>
+						<input type='checkbox' name='timer' value='60' />
+						<span class="icon"></span>
+						<span class="member_text">1분.</span>
+					</label>
+					<label class='checkbox'>
+						<input type='checkbox' name='timer' value='180' />
+						<span class="icon"></span>
+						<span class="member_text">3분.</span>
+					</label>
+					<label class='checkbox'>
+						<input type='checkbox' name='timer' value='300' />
+						<span class="icon"></span>
+						<span class="member_text">5분</span>
+					</label>
 				</div>
 		</div>
 
@@ -74,17 +106,44 @@
 		</div>
 		<div id="result_box" class="box">
 			<h3 class="box_head">결과</h3>
-			<ul id="result_list"></ul>
+			<ul id="result_list">
+				<li>
+					<strong>3. </strong>
+					<img src="/assets/ic_manager.gif" alt="매니져">
+					<strong>닉네임</strong>
+					<span>idididid</span>
+				</li>
+				<li>	
+					<strong>2. </strong>
+					<img src="/assets/ic_manager.gif" alt="매니져">
+					<strong>닉네임</strong>
+					<span>idididid</span>
+				</li>
+				<li>	
+					<strong>1. </strong>
+					<img src="/assets/ic_manager.gif" alt="매니져">
+					<strong>닉네임</strong>
+					<span>(idididid)</span>
+				</li>
+				<li>
+					<strong>100. </strong>
+					<img src="/assets/ic_manager.gif" alt="매니져">
+					<strong>닉네임</strong>
+					<span>(idididid)</span>
+				</li>
+				<li>
+					<img src="/assets/ic_manager.gif" alt="매니져">
+					<strong>닉네임</strong>
+					<span>idididid</span>
+				</li>
+			</ul>
 		</div>
-
-		<!-- <div style="border: 1px solid blue; flex-grow: 1;">Q </div>
-			<div style="border: 1px solid green; flex-grow: 1;">A  정답 적는곳 (복수정답 가능) => race 함수</div> 
-			<div style="border: 1px solid peru; flex-grow: 2;">O 옵션, 필터 (팬만, 최대 몇명, 시간 제한)  race() 파라미터 </div>
-			<div style="border: 1px solid red; flex-grow: 2;">S 시작 정지 버튼 start(race)  stop(race)</div>
-			<div style="border: 1px solid red; flex-grow: 3; overflow-y: scroll;">R? 시작하고 나서 결과보여주는 창 result</div> -->
 		
-		
+		<div class="noti_bar">
+			<p id="noti_msg"></p>
+		</div>
 	</div>
+
 	<script defer src="main.js" type="module"></script>
 </body>
 </html>

@@ -10,9 +10,18 @@ export class Answer {
         addItem() {
                 if (this.input.value.trim() == "") return;
                 const li = document.createElement("li");
-                li.innerText = this.input.value;
+                li.classList.add("answer_item");
+                const strong = document.createElement("strong");
+                strong.innerText = this.input.value;
+                li.appendChild(strong);
                 const btn = document.createElement("button");
-                btn.innerHTML = "─";
+                btn.classList.add("answer_btn");
+                const minus = document.createElement("img");
+                minus.src = "assets/minus.png";
+                minus.width = "32px";
+                minus.height = "32px";
+                btn.appendChild(minus);
+                
                 this.handleRemoveItemListeners([btn]);
                 li.appendChild(btn);
                 this.ul.appendChild(li);
@@ -26,7 +35,7 @@ export class Answer {
         }
 
         removeListItem(e) {
-                e.target.parentNode.remove();
+                e.target.parentNode.parentNode.remove();
         }
 
         getAnswerList() {
