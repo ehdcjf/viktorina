@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<div>
+		<h3>라우터 테스트</h3>
+		<div><button id="go_home" >home</button></div>
+		<div><button id="go_builder" >builder</button></div>
+		<div><button id="go_quiz" >quiz</button></div>
+		<div><button id="go_detail" >detail</button></div>
+		<div><button id="go_history" >history</button></div>
+		<div><button id="go_runner" >runner</button></div>
+	</div>
+	<main>
+	<!-- 팝업 -->
+	<div class="view" id="popup">
+		<div id="popup_content">
+			<div>
+				<h3>내 퀴즈</h3>
+				<ul ></ul>
+			</div>
+			<div>
+				<h3>퀴즈 결과</h3>
+				<ul ></ul>
+			</div>
+			<div>
+				<button >퀴즈만들기</button>
+			</div>
+		</div>
+		
+	</div>
+
+	<!-- 홈 -->
+	<div class="view" id="home">
+		<div>
+			<h3>내 퀴즈</h3>
+			<ul id="my_quiz"></ul>
+		</div>
+		<div>
+			<h3>퀴즈 결과</h3>
+			<ul id="quiz_history"></ul>
+		</div>
+		<div>
+			<button id="create_quiz_btn">퀴즈만들기</button>
+		</div>
+	</div>
+
+	<!-- 만들기 메인 -->
+	<div class="view" id="builder">
+		<div>
+			<h3>제목</h3>
+			<input type="text" id="quiz_head_input">
+		</div>
+
+		<!-- <div id="quiz_thema" >
+			<h3>테마</h3>
+			<div id="thema_file_input">
+				<input type="file">
+				<span>이미지 파일을 드롭해주세요</span>
+			</div>
+			<div id="thema_preview">
+				
+			</div>
+
+			
+		</div> -->
+		<div>
+			<h3>질문목록</h3>
+			<ul id="quiz_list" ></ul>
+		</div>
+		<div>
+			<button id="add_quiz_btn">질문 추가</button>
+		</div>
+
+	</div>
+	<!-- 만들기 상세 -->
+	<div class="view" id="quiz">
+		<div>
+			<h3>퀴즈 유형</h3>
+			<div>셀렉트박스</div>
+		</div>
+		<div>
+			<h3>질문</h3>
+			<input type="text" id="quiz_input">
+		</div>
+
+		<div>
+			<h3>미디어 추가</h3>
+			<div>이미지 드래그앤드랍</div>
+
+
+		</div>
+
+		<div>
+			<h3>타이머</h3>
+		</div>
+
+		<div>
+			<h3>답안</h3>	
+
+			<div id="normal_quiz">
+
+			</div>
+
+
+			<div id="ox_quiz">
+
+			</div>
+
+			<div id="typing_quiz">
+
+			</div>
+		</div>
+		<div>	
+			<button id="reject_quiz_btn">취소</button>
+			<button id="resolve_quiz_btn">완료</button>
+		</div>
+	</div>
+
+	<!-- 퀴즈 디테일 -->
+	<div class="view" id="detail">
+		<div>
+			<h3>제목</h3>
+			<input type="text" id="quiz_head">
+		</div>
+		<div>
+			
+		</div>
+
+		<div>
+			<h3>테마</h3>
+			<div>이미지 드래그앤드랍</div>
+		</div>
+		<div>
+			<h3>질문목록</h3>
+			<ul id="quiz_list" ></ul>
+		</div>
+	</div>
+
+	<!-- 퀴즈 결과 -->
+	<div class="view" id="history">
+
+	</div>
+	
+	<!-- 퀴즈 시작하기 -->
+	<div class="view" id="runner">
+		<h3>참여자</h3>
+			<div id="member_box">
+				<label>참가자: </label>
+				<label class='checkbox'>
+					<input type='checkbox' name='member' value='isNormal' checked/>
+					<span class="icon"></span>
+					<span class="member_text">건빵.</span>
+				</label>
+				<label class='checkbox'>
+					<input type='checkbox' name='member' value='isFan' checked/>
+					<span class="icon"></span>
+					<span class="member_text">팬.</span>
+				</label>
+				<label class='checkbox'>
+					<input type='checkbox' name='member' value='isTopFan' checked/>
+					<span class="icon"></span>
+					<span class="member_text">열혈팬.</span>
+				</label>
+				<label class='checkbox'>
+					<input type='checkbox' name='member' value='isFollower' checked/>
+					<span class="icon"></span>
+					<span class="member_text">구독자.</span>
+				</label>
+				<label class='checkbox'>
+					<input type='checkbox' name='member' value='isSupporter' checked/>
+					<span class="icon"></span>
+					<span class="member_text">서포터.</span>
+				</label>
+				<label class='checkbox'>
+					<input type='checkbox' name='member' value='isManager' checked/>
+					<span class="icon"></span>
+					<span class="member_text">매니저.</span>
+				</label>
+			</div>
+	</div>
+
+	</main>
+	<script type="module" src="index.js"></script>
+</body>
+</html>

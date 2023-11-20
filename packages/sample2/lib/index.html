@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index.css">
+	<title>Document</title>
+</head>
+<body>	
+	<!-- 팝업확인용 임시 버튼 -->
+	<button id="open_popup_btn" style="display: none;">open</button>
+	<div id="popup_box">
+		<div id="popup_container">
+			<div id="popup">
+				<span></span>
+				<h2>popup</h2>
+				<p>This is a Popup</p>
+				<button class="close_popup_btn">close</button>
+			</div>
+			<div id="quiz_popup">
+				<div><button id="multi_choice_quiz_btn">객관식 퀴즈</button></div>
+				<div><button id="ox_quiz_btn">OX 퀴즈</button></div>
+				<div><button id="short_answer_quiz_btn">단답형 퀴즈</button></div>
+				<button class="close_popup_btn">close</button>
+
+				
+			</div>
+			<div id="timer_popup">
+				<div><button>10초</button></div>
+				<div><button>20초</button></div>
+				<div><button>30초</button></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 라우팅 테스트 -->
+	<div>
+		라우팅 테스트
+		<ul>
+			<li>
+				<button id="home_btn">home</button>
+			</li>
+			
+			<li>
+				<button id="quiz_make_btn">create quiz</button>
+			</li>
+		</ul>
+	</div>
+
+
+	<main >
+		<div class='view' id="home">
+			<nav>
+				<h1>Home</h1>
+			</nav>
+
+			<h3>내 퀴즈 <button id="create_btn">만들기</button></h3>
+			<ul>
+				<li>무슨 무슨 퀴즈</li>
+				<li>무슨 무슨 퀴즈</li>
+				<li>무슨 무슨 퀴즈</li>
+			</ul>
+
+			<h3>퀴즈 히스토리</h3>
+			<ul>
+				<li>무슨무슨 히스토리</li>
+				<li>무슨무슨 히스토리</li>
+				<li>무슨무슨 히스토리</li>
+				<li>무슨무슨 히스토리</li>
+			</ul>
+
+
+
+
+		</div>
+		<div class='view' id="generator" >
+			<nav>
+				<h1>퀴즈만들기</h1>
+			</nav>
+			<div >
+				제목: <input type="text">
+			</div>
+			<div>
+				설명: <textarea></textarea>
+			</div>
+			<div>
+				<h3>질문</h3>
+				<ul id="quiz_list">
+					<li>퀴즈</li>
+					<li>퀴즈</li>
+					<li>퀴즈</li>
+					<li>퀴즈</li>
+					<li>퀴즈</li>
+					<li>퀴즈</li>
+					<li>퀴즈</li>
+					<li>퀴즈</li>
+					<li>퀴즈</li>
+				</ul>
+			</div>
+			<div id="generator_btn_box">
+				<button id="generate_btn">질문 추가</button>
+			</div>
+		</div>
+		<div class='view' id="quiz_generator" >
+			<div>질문유형</div>
+
+			<div>
+				이미지 드래그앤드랍
+				<div>timer</div>
+			</div>
+			<div>
+				질문
+			</div>
+
+			<div >
+				<div>
+					퀴즈
+				</div>
+				<div>
+					ox
+				</div>
+				<div>
+					단답형
+				</div>
+			</div>
+		</div>
+		
+		<div class='view' id="ox_generator" ></div>
+		<div class='view' id="short_answer_generator" ></div>
+		<div class='view' id="detail" ></div>
+		<div class='view' id="result" ></div>
+	</main>
+
+
+
+	
+	<script type="module" src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "quiz",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "ehdckf <ehdcjf@funnyfig.com>",
+  "homepage": "https://github.com/ehdcjf/viktorina#readme",
+  "license": "ISC",
+  "main": "lib/quiz.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehdcjf/viktorina.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/quiz.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/ehdcjf/viktorina/issues"
+  }
+}
