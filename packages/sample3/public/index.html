@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<!-- <div>
+		<h3>라우터 테스트</h3>
+		<div><button id="go_home" >home</button></div>
+		<div><button id="go_builder" >builder</button></div>
+		<div><button id="go_quiz" >quiz</button></div>
+		<div><button id="go_detail" >detail</button></div>
+		<div><button id="go_history" >history</button></div>
+		<div><button id="go_runner" >runner</button></div>
+	</div> -->
+	<main>
+	<!-- 팝업 -->
+	<div class="view" id="popup">
+		<div id="popup_content">
+			<div>
+				<h3>내 퀴즈</h3>
+				<ul ></ul>
+			</div>
+			<div>
+				<h3>퀴즈 결과</h3>
+				<ul ></ul>
+			</div>
+			<div>
+				<button >퀴즈만들기</button>
+			</div>
+		</div>
+		
+	</div>
+
+	<!-- 홈 -->
+	<div class="view" id="home">
+		<div>
+			<h3>내 퀴즈</h3>
+			<ul id="my_quiz"></ul>
+		</div>
+		<div>
+			<h3>퀴즈 결과</h3>
+			<ul id="quiz_history"></ul>
+		</div>
+		<div>
+			<button id="create_quiz_btn">퀴즈만들기</button>
+		</div>
+	</div>
+
+	<!-- 만들기 메인 -->
+	<div class="view" id="builder">
+		<div>
+			<h3>제목</h3>
+			<input type="text" id="quiz_head_input">
+		</div>
+
+		<!-- <div id="quiz_thema" >
+			<h3>테마</h3>
+			<div id="thema_file_input">
+				<input type="file">
+				<span>이미지 파일을 드롭해주세요</span>
+			</div>
+			<div id="thema_preview">
+				
+			</div>
+
+			
+		</div> -->
+		<div>
+			<h3>질문목록</h3>
+			<ul id="quiz_list" ></ul>
+		</div>
+		<div>
+			<button id="add_quiz_btn">질문 추가</button>
+		</div>
+
+	</div>
+	<!-- 만들기 상세 -->
+	<div class="view" id="quiz">
+		<div id="quiz_type_container">
+			<strong>퀴즈 유형</strong>
+			<div id="type_container">
+				<div class="type_item" data-value="normal_quiz">
+					객관식
+				</div>
+
+				<div class="type_item" data-value="ox_quiz">
+					 OX
+				</div>
+
+				<div class="type_item" data-value="typing_quiz">
+					단답형
+				</div>
+			</div>
+		</div>
+
+		<!-- <div id="quiz_timer_container">
+			<strong>타이머</strong>
+			<div id="timer_container">
+				<div class="timer_item" data-value="5">5초</div>
+				<div class="timer_item" data-value="10">10초</div>
+				<div class="timer_item" data-value="20">20초</div>
+				<div class="timer_item" data-value="30">30초</div>
+				<div class="timer_item" data-value="60">60초</div>
+				<div class="timer_item" data-value="90">90초</div>
+				<div class="timer_item" data-value="120">120초</div>
+				<div class="timer_item" data-value="180">180초</div>
+				<div class="timer_item" data-value="240">240초</div>
+			</div>
+		</div>
+
+		<div id="quiz_point_container">
+			<strong>포인트</strong>
+			<div id="point_container">
+				<div class="point_box point_standard" data-value="standard">
+					<h5 class="point_head point_standard ">
+						표준
+					</h5>
+
+					<div class="point_detail point_standard">
+						정답을 맞히면 일반적인 수준의 포인트를 획득합니다. 
+					</div>
+				</div>
+				<div class="point_box point_double" data-value="double">
+					<h5 class="point_head point_double">
+						더블 포인트
+					</h5>
+
+					<div class="point_detail point_double">
+						정답을 맞히면 포인트를 두 배로 획득합니다. 
+					</div>
+				</div>
+				<div class="point_box point_none" data-value="none">
+					<h5 class="point_head point_none">
+						없음
+					</h5>
+					<div class="point_detail point_none">
+						포인트를 획득하지 않습니다. 
+					</div>
+				</div>
+				
+				
+			</div>
+		</div> -->
+
+		<div id="quiz_question_container">
+			<h1 id="question_head">질문</h1>
+			<textarea name="" placeholder="질문을 입력해주세요"  id="question_input"  rows="1"></textarea>
+		</div>
+
+		<div id="quiz_answer_container">
+			<div class="quiz_answer" id="normal_quiz" style="display: flex;">
+				<div class="normal_quiz_item">빨강</div>
+				<div class="normal_quiz_item">노랑</div>
+				<div class="normal_quiz_item">초록</div>
+				<div class="normal_quiz_item">파랑</div>
+			</div>
+
+
+			<div class="quiz_answer" id="ox_quiz" style="display: none;">
+				ox퀴즈
+			</div>
+
+			<div class="quiz_answer" id="typing_quiz" style="display: none;">
+				단답형
+			</div>
+		</div>
+		<div id="quiz_btn_container">	
+			<button id="reject_quiz_btn">취소</button>
+			<button id="resolve_quiz_btn">완료</button>
+		</div>
+	</div>
+
+	<!-- 퀴즈 디테일 -->
+	<div class="view" id="detail">
+		<div>
+			<h3>제목</h3>
+			<input type="text" id="quiz_head">
+		</div>
+
+		<div>
+			<h3>질문목록</h3>
+			<ul id="quiz_list" ></ul>
+		</div>
+	</div>
+
+	<!-- 퀴즈 결과 -->
+	<div class="view" id="history">
+
+	</div>
+	
+	<!-- 퀴즈 시작하기 -->
+	<div class="view" id="runner">
+		<h3>참여자</h3>
+			<div id="member_box">
+				<label>참가자: </label>
+				<label class='checkbox'>
+					<input type='checkbox' name='member' value='isNormal' checked/>
+					<span class="icon"></span>
+					<span class="member_text">건빵.</span>
+				</label>
+				<label class='checkbox'>
+					<input type='checkbox' name='member' value='isFan' checked/>
+					<span class="icon"></span>
+					<span class="member_text">팬.</span>
+				</label>
+				<label class='checkbox'>
+					<input type='checkbox' name='member' value='isTopFan' checked/>
+					<span class="icon"></span>
+					<span class="member_text">열혈팬.</span>
+				</label>
+				<label class='checkbox'>
+					<input type='checkbox' name='member' value='isFollower' checked/>
+					<span class="icon"></span>
+					<span class="member_text">구독자.</span>
+				</label>
+				<label class='checkbox'>
+					<input type='checkbox' name='member' value='isSupporter' checked/>
+					<span class="icon"></span>
+					<span class="member_text">서포터.</span>
+				</label>
+				<label class='checkbox'>
+					<input type='checkbox' name='member' value='isManager' checked/>
+					<span class="icon"></span>
+					<span class="member_text">매니저.</span>
+				</label>
+			</div>
+	</div>
+
+	</main>
+	<!-- <div aria-label="질문 제목입니다. 제목을 추가하려면 클릭하세요." class="styles__EditorInput-sc-x56dkc-2 eORybO" contenteditable="true" role="textbox" spellcheck="true" data-lexical-editor="true" data-editor-value="" data-functional-selector="question-title__input" style="user-select: text; white-space: pre-wrap; word-break: break-word;"><p data-placeholder="질문 입력을 시작하세요"><br></p></div> -->
+</body>
+</html>
